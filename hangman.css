@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0px;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #6AD4DD; */
+    background-color: #7F9F80;
+    height: 100vh;
+}
+
+.container {
+    padding: 5%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    background-color: #F8F6E3;
+    border-radius: 10px;
+    box-shadow: 5px 8px 6px rgb(92, 76, 76);
+}
+
+.hang-view img {
+    user-select: none;
+    max-width: 200px;
+}
+
+.hang-view h2 {
+    margin-top: 10%;
+    font-size: 1.45rem;
+    text-transform: uppercase;
+}
+
+.letters {
+    list-style-type: none;
+    display: flex;
+    gap: 2%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20%;
+}
+
+.letters .letter {
+    width: 28px;
+    border-bottom: 3px solid black;
+    margin-bottom: 15%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.letters .letter.guess {
+    border-color: transparent;
+    margin: -40px 0 35px;
+}
+
+.game-view h4 {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.game-view h4 b {
+    font-weight: 600;
+}
+
+.game-view .guess b {
+    color: red;
+}
+
+.game-view .keyboard {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.game-view .keyboard button[disabled] {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.game-view button {
+    width: calc(100% /9 - 5px);
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: #7F9F80;
+    border: none;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.game-view button:hover {
+    background: gray;
+}
+
+.lost-modal {
+    /* position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.336);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(0,0,0,0.336);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 0 10px;
+    transition: opacity 0.4s ease;
+}
+
+.lost-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.4s 0.4s ease;
+}
+
+.lost-modal img {
+    max-width: 130px;
+}
+
+.lost-modal .content {
+    background: white;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.lost-modal .content h4 {
+    font-size: larger;
+}
+
+.lost-modal .content p {
+    font-size: large;
+    padding-top: 10px;
+}
+
+.lost-modal .content button {
+    padding: 10px;
+    border: none;
+    border-radius: 2px;
+    margin-top: 10px;
+    background-color: #7F9F80;
+    color: white;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+@media (max-width: 782px) {
+    .container {
+        flex-direction: column;
+        padding: 30px 15px;
+        align-items: center;
+    }
+
+    .hang-view img {
+        max-width: 200px;
+        /* width: 350px;
+        height: 350px; */
+    }
+
+    .hang-view h1 {
+        display: none;
+    }
+
+    .game-view h4 {
+        font-size: 1rem;
+    }
+
+    .letters {
+
+        padding-top: 25%;
+    }
+
+    .letters .letter {
+        margin-bottom: 35px;
+        font-size: 1.7rem;
+    }
+
+    .letters .letter.guessed {
+        margin: -35px 0 25px;
+    }
+
+    .lost-modal img {
+        max-width: 120px;
+    }
+
+    .lost-modal h4 {
+        font-size: 1.45rem;
+    }
+
+    .lost-modal p {
+        font-size: 1.1rem;
+    }
+
+    .lost-modal button {
+        padding: 10px 18px;
+    }
+}
